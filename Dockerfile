@@ -4,11 +4,13 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY package*.json /
+COPY package.json /
+
+COPY package-lock.json /
 
 RUN npm install --only=production
 
-COPY . /
+COPY . .
 
 EXPOSE 3000
 
